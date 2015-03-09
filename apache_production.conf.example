@@ -1,5 +1,5 @@
 <VirtualHost *:80>
-    ServerName www.yoursite.net
+    ServerName www.yoursite
 
     WSGIDaemonProcess www_yoursite_net user=username group=username threads=5
     WSGIScriptAlias / /yoursite/web/wsgi.py
@@ -13,3 +13,8 @@
     </Directory>
 </VirtualHost>
 
+
+<VirtualHost *:80>
+    ServerName yoursite
+    Redirect permanent / http://www.yoursite/
+</VirtualHost>
