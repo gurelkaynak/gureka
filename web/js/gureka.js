@@ -1,4 +1,3 @@
-
 /*
  *
  * General blog parameters
@@ -7,7 +6,8 @@
 var blogParams = {
     'name': "Gürel",
     'middlename': "Remzi",
-    'lastname': "Kaynak"
+    'lastname': "Kaynak",
+    'api_source': "http://localhost:8000/api/post_list/?format=json"
 };
 
 //bootstrap classes
@@ -127,14 +127,14 @@ var Blog = React.createClass({
                         {posts}
                     </div>
                 </div>
-                <Pagination prevEvent={this.handlePrev.bind(this)} nextEvent={this.handleNext.bind(this)} prev={this.state.prev} next={this.state.next} />
+                <Pagination prevEvent={this.handlePrev.bind(this)} nextEvent={this.handleNext.bind(this)} />
             </div>
         );
     }
 });
 
 React.render(
-  <Blog source="http://localhost:8000/api/post_list/?format=json" />,
+  <Blog source={blogParams['api_source']} />,
   document.getElementById('main')
 );
 
