@@ -1,2 +1,3 @@
-# gureka
-Gürel Remzi Kaynak (gureka) blog frontend :))
+# Frontend for ultramicroblog
+
+Using Flask python microframework and React js from facebook. 
