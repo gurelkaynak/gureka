@@ -1,0 +1,15 @@
+<VirtualHost *:80>
+    ServerName www.yoursite.net
+
+    WSGIDaemonProcess www_yoursite_net user=username group=username threads=5
+    WSGIScriptAlias / /yoursite/web/wsgi.py
+
+    <Directory /yoursite/web>
+        WSGIProcessGroup www_yoursite_net
+        WSGIApplicationGroup %{GLOBAL}
+        Order deny,allow
+        Allow from all
+        ServerSignature Off
+    </Directory>
+</VirtualHost>
+
