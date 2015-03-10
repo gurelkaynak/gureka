@@ -7,7 +7,7 @@ var blogParams = {
     'name': "Gürel",
     'middlename': "Remzi",
     'lastname': "Kaynak",
-    'api_source': "http://localhost:8000/api/post_list/?format=json"
+    'api_source': "http://api.gureka.net/api/post_list/?format=json"
 };
 
 //bootstrap classes
