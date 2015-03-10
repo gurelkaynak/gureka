@@ -13,8 +13,8 @@ def hello_world():
         api_source = "%s&page=%s" % (api_source, page)
     return render_template('index.html', domain=DOMAIN, api_source=api_source)
 
+#url_for('static', filename='js/blog.js')
+
 if __name__ == '__main__':
     app.run(debug=True)
-
-url_for('static', filename='js/blog.js')
 
