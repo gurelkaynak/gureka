@@ -1,14 +1,20 @@
-from flask import Flask
+from flask import Flask, request
 from flask import render_template
 
 app = Flask(__name__)
 
+from flask_config.settings import *
+
 @app.route('/')
 def hello_world():
-    return render_template('index.html')
+    page = request.args.get('page', False)
+    api_source = API_SOURCE
+    if page: 
+        api_source = "%s&page=%s" % (api_source, page)
+    return render_template('index.html', domain=DOMAIN, api_source=api_source)
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
 
 url_for('static', filename='js/blog.js')
 

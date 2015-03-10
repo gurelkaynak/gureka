@@ -1,0 +1,1 @@
+API_SOURCE = 'http://localhost:8000/api/post_list/?format=json'
