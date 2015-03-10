@@ -7,7 +7,9 @@ var blogParams = {
     'name': "Gürel",
     'middlename': "Remzi",
     'lastname': "Kaynak",
-    'api_source': "http://localhost:8000/api/post_list/?format=json"
+    'api_source': function () { 
+        return "http://localhost:8000/api/post_list/?format=json";
+    }
 };
 
 //bootstrap classes
@@ -47,10 +49,10 @@ var Pagination = React.createClass({
         var next;
 
         if(this.props.prev){
-            prev = <a id='pagination-prev' onClick={this.props.prevEvent} href='#'>Daha Yeni</a>;
+            prev = <a id="pagination-prev" onClick={this.props.prevEvent} href="#">Daha Yeni</a>;
         }
         if(this.props.next){
-            next = <a id='pagination-next' onClick={this.props.nextEvent} href='#'>Daha Eski</a>;
+            next = <a id="pagination-next" onClick={this.props.nextEvent} href="#">Daha Eski</a>;
         }
 
         return (
@@ -127,14 +129,14 @@ var Blog = React.createClass({
                         {posts}
                     </div>
                 </div>
-                <Pagination prevEvent={this.handlePrev.bind(this)} nextEvent={this.handleNext.bind(this)} />
+                <Pagination prev={this.state.prev} next={this.state.next} prevEvent={this.handlePrev.bind(this)} nextEvent={this.handleNext.bind(this)} />
             </div>
         );
     }
 });
 
 React.render(
-  <Blog source={blogParams['api_source']} />,
+  <Blog source={blogParams['api_source']()} />,
   document.getElementById('main')
 );
 
