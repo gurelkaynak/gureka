@@ -91,7 +91,7 @@ var blogJS = function(context){
                     prev: 1,
                     next: 1,
                     hasNext: false,
-                    hasPrev: false,
+                    hasPrev: false
                 }
             },
             ajaxData: function(url){
