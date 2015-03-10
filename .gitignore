@@ -3,3 +3,11 @@
 *~
 /web/env
 apache_production.conf
+
+prod_settings.py
+dev_settings.py
+*.pyc
+build
+!/web/static/js/build
+pip-log.txt
+.module-cache

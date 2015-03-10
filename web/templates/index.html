@@ -16,9 +16,14 @@
     <script src="http://fb.me/react-0.12.2.min.js"></script>
     <script src="http://fb.me/JSXTransformer-0.12.2.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/showdown/0.3.1/showdown.min.js"></script>
-    <script type="text/jsx" src="/static/js/blog.js"></script>
+    <script type="text/javascript" src="/static/js/build/blog.js"></script>
     <title>Gürel (Remzi) Kaynak Blog</title>
   </head>
   <body id="main">
+      <script type="text/javascript">
+        $(document).ready(function(){
+                blogJS().init("{{domain}}", "{{api_source|safe}}");
+        });
+      </script>
   </body>
 </html>
