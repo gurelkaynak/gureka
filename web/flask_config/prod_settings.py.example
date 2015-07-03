@@ -1,0 +1,2 @@
+API_SOURCE = 'http://your-site/api/post_list/?format=json'
+DOMAIN = 'http://your-site/'
