@@ -100,13 +100,20 @@ var blogJS = function(context){
                     dataType: 'json',
                     success: function(data) {
                         if(this.isMounted()){
-                            this.setState({
-                                posts: data.results, 
-                                prev: data.previous_page_number, 
-                                next: data.next_page_number,
-                                hasNext: data.has_next,
-                                hasPrev: data.has_prev
-                            });
+                            if(data.results){
+                                this.setState({
+                                    posts: data.results, 
+                                    prev: data.previous_page_number, 
+                                    next: data.next_page_number,
+                                    hasNext: data.has_next,
+                                    hasPrev: data.has_prev
+                                });
+                            }
+                            else {
+                                this.setState({
+                                    posts: [data]
+                                });
+                            }
                         }
                     }.bind(this),
                     error: function(xhr, status, err) {

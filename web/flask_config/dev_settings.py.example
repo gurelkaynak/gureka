@@ -1,1 +1,3 @@
-API_SOURCE = 'http://localhost:8000/api/post_list/?format=json'
+API_URL = 'http://localhost:8000'
+API_INDEX = '%s/api/post_list/?format=json' % API_URL
+API_DETAIL = '%s/api/post/' % API_URL
