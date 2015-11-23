@@ -155,7 +155,7 @@ var blogJS = function(context){
 
         React.render(
           <Blog source={blogParams['api_source']()} />,
-          document.getElementById('main')
+          document.getElementById('blog')
         );
     }
 };

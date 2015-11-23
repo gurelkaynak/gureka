@@ -1,3 +1,4 @@
+'use strict';
 
 var blogJS = function blogJS(context) {
 
@@ -189,6 +190,6 @@ var blogJS = function blogJS(context) {
             }
         });
 
-        React.render(React.createElement(Blog, { source: blogParams['api_source']() }), document.getElementById('main'));
+        React.render(React.createElement(Blog, { source: blogParams['api_source']() }), document.getElementById('blog'));
     };
 };
